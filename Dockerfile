@@ -3,7 +3,8 @@ FROM caddy:builder-alpine  AS builder
 
 # Build caddy with plugins
 RUN xcaddy build \
-  --with github.com/mholt/caddy-l4
+  --with github.com/mholt/caddy-l4 \
+  --with github.com/caddy-dns/cloudflare
 
 # Build final image
 FROM caddy:latest
